@@ -1,12 +1,31 @@
 let container = document.querySelector(".container");
-let dimensions = 16
 
-for (let i = 0 ; i < dimensions ; i++) {
-    for (let j = 0 ; j < dimensions ; j++) {
-        let div = document.createElement("div");
-        div.classList.add("square");
-        div.textContent = (i+1)*(j+1);
-        container.appendChild(div);
-    }
+let containerWidth = 1000;
+let containerHeight = 1000;
+
+container.style.width = containerWidth.toString() + "px";
+container.style.height = containerHeight.toString() + "px";
+
+let squaresPerSide = prompt("how many squares per side?");
+
+while (true) {
+    if(squaresPerSide <= 1000) break;
+    alert("please give a number less than or equal to 1000");
+    squaresPerSide = prompt("how many squares per side?");
 }
+
+let squareDim = Math.floor(containerWidth/squaresPerSide);
+
+
+for (let i = 0 ; i < squaresPerSide*squaresPerSide ; i++) {
+    let singleSquare = document.createElement("div");
+    singleSquare.classList.add("square");
+    container.appendChild(singleSquare);
+    singleSquare.addEventListener("mouseover", 
+    e => e.target.classList.add("new-color"));
+}
+
+container.style.gridTemplateRows = `repeat(${squaresPerSide}, ${squareDim}px)`;
+container.style.gridTemplateColumns = `repeat(${squaresPerSide}, ${squareDim}px)`;
+
 

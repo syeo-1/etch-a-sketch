@@ -4,21 +4,24 @@ grid-template-rows: repeat(16, 50px);
 above would be for the grid
 
 each square should be part of a class and have it's own style */
-body.container {
+.container {
     display: grid;
-    grid-template-columns: repeat(16, 50px);
-    grid-template-rows: repeat(16 50px);
-    background: grey;
+    /* grid-template-columns: repeat(16, 50px);
+    grid-template-rows: repeat(16 50px); */
 }
 
 .center {
-    margin: auto;
+    margin: 0 auto;
     width: 50%;
 }
 
 .square {
-    height: 50px;
-    width: 50px;
-    background: blue;
+    /* height: 50px;
+    width: 50px; */
+    background: black;
     border-style: solid;
+}
+
+.new-color {
+    background-color: white;
 }

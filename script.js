@@ -1,5 +1,9 @@
 let container = document.querySelector(".container");
 
+document.querySelector("#reset").addEventListener("click", function() {
+    window.location.reload();
+});
+
 let containerWidth = 1000;
 let containerHeight = 1000;
 
